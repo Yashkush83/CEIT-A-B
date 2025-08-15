@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Computer Edge Institute of Technology</title>
+  <meta name="description" content="Ram Computer Institute - Best computer courses, practical training, and placement support." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary: #0f62fe;
+      --accent: #0b8a4b;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --bg: #f5f7fb;
+      --radius: 12px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Container */
+    .container{max-width:1100px;margin:0 auto;padding:24px;}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg, rgba(15,98,254,0.06), rgba(11,138,75,0.03));
+      position:sticky; top:0; z-index:30; backdrop-filter: blur(4px);
+      border-bottom:1px solid rgba(15,23,36,0.03);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
+    .logo{
+      width:80px;height:60px;
+      background-color:white;
+       color:white;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      box-shadow:0 6px 18px rgba(15,98,254,0.12);
+    }
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{color:inherit;text-decoration:none;font-weight:600}
+    .cta{background:var(--primary); color:white;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Mobile */
+    .menu-toggle{display:none;background:transparent;border:0;font-size:20px}
+    @media (max-width:880px){
+      nav ul{display:none;position:absolute; right:24px; top:66px; background:white; flex-direction:column; padding:12px; box-shadow:0 8px 30px rgba(2,6,23,0.08); border-radius:8px}
+      .menu-toggle{display:block}
+      .nav-mobile-open nav ul{display:flex}
+    }
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
+    .hero h1{font-size:32px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .cards{display:flex;gap:12px;margin-top:10px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+    .hero-right{background:linear-gradient(180deg,white, #fbfdff);padding:20px;border-radius:14px;box-shadow:0 20px 40px rgba(2,6,23,0.06)}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; padding:18px 0}
+      .hero-right{order: -1}
+    }
+
+    /* Sections */
+    section{padding:28px 0}
+    .section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:880px){ .grid{grid-template-columns:repeat(1,1fr)} }
+
+    .course{background:white;padding:16px;border-radius:12px}
+    .course h3{margin:0 0 8px}
+    .course p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Features */
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{flex:1;min-width:200px;background:white;padding:12px;border-radius:12px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    @media (max-width:880px){ .gallery{grid-template-columns:repeat(2,1fr)} .gallery img{height:140px} }
+
+    /* Contact */
+    .contact-form{background:white;padding:18px;border-radius:12px}
+    .form-row{display:flex;gap:12px}
+    .form-row .col{flex:1}
+    input, textarea, select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px;
+    }
+    button.primary{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Footer */
+    footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav" id="topNav">
+      <div class="brand">
+        <div class="logo">
+            <img src="logo.png" alt="" height="100%" width="100%"></div>
+        <div>
+          <div style="font-size:15px">Computer Edge Institute of Technology</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:600">Practical • Placement • Affordable</div>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuBtn" aria-label="menu">☰</button>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#features">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="cta" href="#enroll">Enroll Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div>
+        <h1>Top Computer Institute in your city — Practical Training & Placement</h1>
+        <p>Short-term and long-term courses: Basic Computer, Tally, Web Development, Python, Digital Marketing, Hardware & Networking. Batch sizes limited — hands-on lab, real projects.</p>
+
+        <div class="cards">
+          <div class="card" style="min-width:160px">
+            <strong>Flexible Batches</strong>
+            <div class="muted" style="margin-top:6px">Morning / Evening / Weekend</div>
+          </div>
+          <div class="card" style="min-width:160px">
+            <strong>Placement Support</strong>
+            <div class="muted" style="margin-top:6px">Resume help + interviews</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="cta" href="#enroll">Free Demo Class</a>
+          <span style="margin-left:12px" class="muted">Call: +91 8393006661, +91 8959025161</span>
+        </div>
+
+        <div style="margin-top:18px" class="muted">Address: Asan And BachhGoan firozabad, India, 283204</div>
+      </div>
+
+      <div class="hero-right">
+        <h3 style="margin-top:0">Upcoming Courses</h3>
+        <ul style="padding-left:18px;margin:8px 0;color:var(--muted)">
+          <li>Full Stack Web Development - 9 months</li>
+          <li>Python with Projects - 4 months</li>
+          <li>Hardware & Networking - 3 months</li>
+        </ul>
+
+        <div style="display:flex;gap:10px;margin-top:12px;align-items:center;">
+          <div style="flex:1">
+            <div style="font-size:12px;color:var(--muted)">Next Demo</div>
+            <div style="font-weight:700">5th Sep, 2025 • 6:00 PM</div>
+          </div>
+          <div>
+            <a class="cta" href="#contact">Register</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses">
+      <div class="section-title">
+        <h2>Courses Offered</h2>
+        <div class="muted">Flexible fees • Certificates • Live projects</div>
+      </div>
+
+      <div class="grid">
+        <div class="course">
+          <h3>Basic Computer (1 Year)</h3>
+          <p>MS Office, DTP, Basic Computer, Tally, Internet,  </p>
+          <p>CCC, A Level, O Level</p>
+          <div style="margin-top:8px"><strong>Fee:</strong> ₹5,999</div>
+        </div>
+
+        <div class="course">
+          <h3>Web Development (6 Months)</h3>
+          <p>Java Stack, Mern Stack, Python Stack</p>
+          <p>Frontend-(HTML,CSS,JS,React, etc)</p>
+          <p>Backend-(JAVA,PYTHON,MEARN,PHP,etc)</p>
+          <div style="margin-top:8px"><strong>Fee:</strong> ₹25,000</div>
+        </div>
+
+        <div class="course">
+          <h3>Webside with Projects (2 Months)</h3>
+          <p>Core Python, Core java, OOP, Libraries, Mini projects, Data basics.</p>
+          <p>MERN Stack Projects</p>
+          <div style="margin-top:8px"><strong>Fee:</strong> ₹6,499</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+        <div class="muted">Practical labs • Experienced trainers • Small batches</div>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <strong>Hands-on Lab</strong>
+          <div class="muted">Real machines, project-based learning, 1:6 trainer-student ratio.</div>
+        </div>
+        <div class="feature">
+          <strong>Experienced Trainers</strong>
+          <div class="muted">Industry professionals with teaching experience.</div>
+        </div>
+        <div class="feature">
+          <strong>Placement Assistance</strong>
+          <div class="muted">Interview prep, resume building, job referrals.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-title">
+        <h2>Gallery</h2>
+        <div class="muted">Classroom, Projects, Events</div>
+      </div>
+
+      <div class="gallery" aria-hidden="false">
+        <img src="images.jpeg" alt="Lab 1"/>
+        <img src="Responsibilities-of-an-IT-PROJECT-MANAGER-1024x576.png" alt="Project"/>
+        <img src="workshop.jpg" alt="Workshop"/>
+        <img src="1581333516phpVSycrt.jpeg" alt="Placement"/>
+      </div>
+    </section>
+
+    <!-- ENROLL / CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2 id="enroll">Enroll & Contact</h2>
+        <div class="muted">Book free demo • Ask for syllabus</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+        <div>
+          <div class="contact-form">
+            <form id="contactForm" onsubmit="return submitForm(event)">
+              <div style="margin-bottom:10px">
+                <label>पूरा नाम</label><br>
+                <input type="text" id="name" placeholder="आपका नाम" required>
+              </div>
+
+              <div class="form-row" style="margin-bottom:10px">
+                <div class="col">
+                  <label>मोबाइल</label><br>
+                  <input type="tel" id="phone" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+                </div>
+                <div class="col">
+                  <label>रुचि (Course)</label><br>
+                  <select id="course" required>
+                    <option value="">Select</option>
+                    <option>Basic Computer</option>
+                    <option>Web Development</option>
+                    <option>Python</option>
+                    <option>Hardware & Networking</option>
+                  </select>
+                </div>
+            </div>
+                <!-- <form id="enrollForm" method="post" action="enroll.php">
+                    <input type="text" name="name" placeholder="पूरा नाम" required>
+                    <input type="tel" name="phone" placeholder="मोबाइल" pattern="[0-9]{10}" required>
+                    <select name="course" required>
+                      <option value="">कोर्स चुनें</option>
+                      <option>Basic Computer</option>
+                      <option>Web Development</option>
+                      <option>Python</option>
+                      <option>Hardware & Networking</option>
+                    </select>
+                    <textarea name="message" placeholder="कोई सवाल..."></textarea>
+                    <button type="submit">Submit</button>
+                  </form> -->
+                  
+             
+
+              <div style="margin-bottom:10px">
+                <label>Message / Query</label><br>
+                <textarea id="message" rows="4" placeholder="कोई सवाल..." ></textarea>
+              </div>
+
+              <div style="display:flex;gap:8px;align-items:center">
+                <button class="primary" type="submit">Submit</button>
+                <div class="muted" id="formStatus" aria-live="polite"></div>
+              </div>
+            </form>
+          </div>
+
+          <div style="margin-top:12px" class="muted">
+            <strong>Timing:</strong> Mon–Sat 07:00 AM – 07:00 PM<br>
+            <strong>Email:</strong> kush.yash83@gmail.com
+          </div>
+        </div>
+
+        <div style="background:white;padding:18px;border-radius:12px">
+          <h3 style="margin-top:0">Fees & Offers</h3>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>Sibling discount: 10%</li>
+            <li>Early bird: 5% off for advance payment</li>
+            <li>Installment available for long courses</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <strong>Location</strong>
+            <div class="muted" style="margin-top:6px">Asan And BachhGoan firozabad, India, 283204</div>
+            <div style="margin-top:8px">
+                <a href="#" class="cta">Get Directions</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMPLE FOOTER -->
+    <footer>
+      © 2025 Computer Edge Institute of Technology — All rights reserved • Designed with ❤️
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const topNav = document.getElementById('topNav');
+    menuBtn.addEventListener('click', () => {
+      topNav.classList.toggle('nav-mobile-open');
+    });
+
+    // Simple client-side "submission" - replace with real backend or email API
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const course = document.getElementById('course').value;
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !phone || !course){ 
+        document.getElementById('formStatus').textContent = 'कृपया जरूरी फ़ील्ड भरें';
+        setTimeout(()=> document.getElementById('formStatus').textContent = '', 3000);
+        return false;
+      }
+
+      // यहाँ आप AJAX से अपने backend API को कॉल कर सकते हैं
+      document.getElementById('formStatus').textContent = 'धन्यवाद! आपकी जानकारी प्राप्त हो गई है।';
+      document.getElementById('8393006661').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
